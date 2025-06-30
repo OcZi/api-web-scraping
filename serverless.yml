@@ -12,6 +12,17 @@ provider:
 
 functions:
   scrape_table:
+    handler: scrap_sismos_igb.lambda_handler  # Asegúrarse de que el nombre del archivo y la función coincidan
+    package:
+      include:
+        - ./**  # Incluir todo el contenido del directorio
+    events:
+      - http:
+          path: /scrape/sismos
+          method: get
+          cors: true
+          integration: lambda
+  scrape_table:
     handler: scrap_table.lambda_handler  # Asegúrarse de que el nombre del archivo y la función coincidan
     package:
       include:
