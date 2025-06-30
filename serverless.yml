@@ -11,7 +11,7 @@ provider:
     role: arn:aws:iam::250853414258:role/LabRole
 
 functions:
-  scrape_table:
+  scrape_sismos:
     handler: scrap_sismos_igb.lambda_handler  # Asegúrarse de que el nombre del archivo y la función coincidan
     package:
       include:
